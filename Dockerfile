@@ -13,7 +13,7 @@ RUN npm install --omit=dev
 COPY . .
 
 # Exponer el puerto 3000
-EXPOSE 8080
+EXPOSE 3000
 
 # Iniciar la aplicación Node.js
 CMD ["npm", "start"]
