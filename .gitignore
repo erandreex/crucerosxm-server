@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Directorios de salida de TypeScript
+dist/
+build/
+
+# Archivos de configuración de TypeScript
+*.tsbuildinfo
+
+# Dependencias y paquetes específicos del entorno
+.env
+
+# Configuración de logs
+logs
+*.log
+logs/
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Editor o sistema operativo
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Carpetas temporales
+tmp/
+temp/
+
+# Llaves
+privkey.pem
+fullchain.pem

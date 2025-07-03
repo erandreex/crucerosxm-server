@@ -1,0 +1,11 @@
+# Info
+
+docker build -t NAME .
+
+docker save -o crucerosxm-server.tar crucerosxm-server:latest
+
+scp -i access.pem crucerosxm-server.tar ec2-user@54.87.16.198:/home/ec2-user
+
+docker load -i /home/ec2-user/crucerosxm-server.tar
+
+# crucerosxm
