@@ -38,14 +38,20 @@ app.post("/form", async (req, res) => {
         const mailTo = process.env.MAILTO || "";
         return mailTo
             .split(",")
-            .map((email) => email.trim())
+            .map((email) => email.replace(/\s+/g, ""))
             .filter((email) => email);
+    };
+
+    const formatEmailAddress = (email) => {
+        const cleanEmail = email.replace(/\s+/g, "");
+        const name = "Cruceros por el mundo";
+        return `${name} <${cleanEmail}>`;
     };
 
     const msg = {
         to: getMailToArray(),
-        from: process.env.MAILFROM || "",
-        subject: "Formulario de contacto - Cruceros por el mundo",
+        from: formatEmailAddress(process.env.MAILFROM || ""),
+        subject: "Formulario de contacto",
         text,
         html,
     };
@@ -74,14 +80,20 @@ app.post("/subscribe", async (req, res) => {
         const mailTo = process.env.MAILTO || "";
         return mailTo
             .split(",")
-            .map((email) => email.trim())
+            .map((email) => email.replace(/\s+/g, ""))
             .filter((email) => email);
+    };
+
+    const formatEmailAddress = (email) => {
+        const cleanEmail = email.replace(/\s+/g, "");
+        const name = "Cruceros por el mundo";
+        return `${name} <${cleanEmail}>`;
     };
 
     const msg = {
         to: getMailToArray(),
-        from: process.env.MAILFROM || "",
-        subject: "Quiero subscribirme",
+        from: formatEmailAddress(process.env.MAILFROM || ""),
+        subject: "Solicitud de subscripción",
         text,
         html,
     };
